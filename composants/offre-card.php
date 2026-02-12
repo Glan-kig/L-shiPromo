@@ -2,7 +2,7 @@
     <!-- Image Container -->
     <a href="#" class="block overflow-hidden bg-gradient-to-b from-gray-800/50 to-gray-900/50 h-44 flex items-center justify-center relative">
         <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300" 
-             src="<?php echo 'images/'.$detail['image']; ?>" alt="<?php echo $produit; ?>" />
+             src="<?php echo $detail['image']; ?>" alt="<?php echo $produit; ?>" />
     </a>
 
     <div class="p-5 flex-1 flex flex-col justify-between">

@@ -1,9 +1,6 @@
 <?php 
 
-    echo '<pre>';
-    print_r($_POST);
-    print_r($_FILES);
-    echo '</pre>';
+    session_start();
 
     $dossier_database = __DIR__ . '/../database/';
 
@@ -36,6 +33,7 @@
     $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
     $nom_fichier = uniqid() . '.' . $extension;
     $chemin_complet = $dossier_uploads . $nom_fichier;
+
     if (move_uploaded_file($_FILES['image']['tmp_name'], $chemin_complet)) {
         $chemin_image = 'uploads/'.$magasin.'/'.$nom_fichier;
         $stmt = $pdo->prepare("
@@ -50,8 +48,11 @@
             ':magasin' => $magasin,
             ':chemin_image' => $chemin_image
         ]);
-        echo "Offre promotionnelle créée avec succès !";
+        $_SESSION['succes'] = "Offre promotionnelle créée avec succès !";
     } else {
-        echo "Erreur lors du téléchargement de l'image.";
+        $_SESSION['error'] = "Erreur lors du téléchargement de l'image.";
     }
+
+    header('Location: ../publier.php');
+    exit();
 ?>
