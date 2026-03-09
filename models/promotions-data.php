@@ -26,6 +26,7 @@
         $magasin = $promo['magasin'];
         $produit = $promo['nom_produit'];
         $promotions[$magasin][$produit] = [
+            'id' => $promo['id'],
             'prix-initial' => $promo['prix_initial'],
             'prix-promo' => $promo['prix_promo'],
             'devise' => $promo['devise'],
