@@ -35,6 +35,10 @@
                     class="<?php echo $_SERVER['REQUEST_URI'] === '/lshipromo/contact.php' ? "bg-gray-950/50 text-white" : "text-gray-300 hover:bg-white/5 hover:text-white"; ?> rounded-md px-3 py-2 text-sm font-medium">
                     Contact
                 </a>
+                <a href="dashboard.php" 
+                    class="<?php echo $_SERVER['REQUEST_URI'] === '/lshipromo/dashboard.php' ? "bg-gray-950/50 text-white" : "text-gray-300 hover:bg-white/5 hover:text-white"; ?> rounded-md px-3 py-2 text-sm font-medium">
+                    Dashboard
+                </a>
             </div>
           </div>
         </div>
