@@ -9,6 +9,7 @@
     }
 
     $pdo = new PDO('sqlite:' . $dossier_database . 'lshipromo.sqlite');
+    
     $pdo->exec("CREATE TABLE IF NOT EXISTS promotion (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nom_produit TEXT NOT NULL,

@@ -1,8 +1,17 @@
 <?php 
+session_start();
+
 $header = "Dashboard";
 ?>
 <?php require 'portions/header.php'; ?>
 <?php require 'models/promotions-data.php'; ?>
+
+<?php if(isset($_SESSION['succes'])) : ?>
+    <div class="bg-green-600/20 border border-green-500/50 text-green-400 text-sm py-3 px-4 rounded-md mb-4">
+        <p><?php echo $_SESSION['succes']; ?></p>
+        <?php unset($_SESSION['succes']); ?>
+    </div>
+<?php endif; ?>
 
 <h1 class="text-2xl font-bold text-white text-center mb-4">Liste de toutes les offres</h1>
 
